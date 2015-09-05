@@ -45,10 +45,34 @@
             </p>
 
 
-
             <h2>
-                Version 1.5.9.1 - August Release (8/8/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.1">Download Latest</a>
+                Version 1.5.9.2 - September Release (9/5/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.2">Download Latest</a>
             </h2>
+            <ul>
+                <li>BUG: Fix crash when adding a room when an unconnected connection is selected, now adds a connection onto the end.</li>
+                <li>BUG: Fix issue when changing default connection color and then reload map would change connections to light blue.</li>
+                <li>BUG: Properties menu was not available in context menu on connection.</li>
+                <li>ENH: Enhanced the port calc code so they are more evenly spaced on ellipse and rounded rooms.</li>
+                <li>ENH: Stats list # of rooms without a region.</li>
+                <li>ENH: Add ability to change the default room name from "Cave"</li>
+                <li>CHG: Minor formatting changes on stats.</li>
+                <li>ZIL exporter tweaks (Thanks to Jesse McGrew)
+                    <ul>
+                        <li>Update main loop so M-END doesn't run for meta verbs.</li>
+                        <li>Escape contents of strings.</li>
+                        <li>Export history (creating an ABOUT verb).</li>
+                        <li>Don't write empty room descriptions.</li>
+                        <li>Use a PER routine for conditional exits.</li>
+                        <li>Set object SYNONYM and ADJECTIVE separately.</li>
+                        <li>Fix spacing/style nits.</li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <h4>
+                Version 1.5.9.1 - August Release (8/8/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.1">Download</a>
+            </h4>
             <p>Release focused on new features and some UI cleanup. </p>
             <ul>
                 <li>Allow other room shapes. <b>Ctrl-R</b> for rounded edges, <b>Ctrl-E</b> for elliptical shape, <b>Ctrl-H</b> to toggle hand drawn and straight lines on an individual room.  New tab in room properties to allow for adjustment of rounded edges corner radius.</li>
