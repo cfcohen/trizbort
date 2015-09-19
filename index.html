@@ -44,10 +44,49 @@
                 Follow our blog for announcements and updates (<a target="_blank" href="https://lautzofif.wordpress.com/tag/trizbort/">https://lautzofif.wordpress.com/tag/trizbort/</a>).
             </p>
 
-
             <h2>
-                Version 1.5.9.2 - September Release (9/5/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.2">Download Latest</a>
+                Version 1.5.9.3 - Mid September Release (9/19/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.3">Download Latest</a>
             </h2>
+            <p>Lots of enhancements and fixes for this release.  Thanks to Andrew Schultz for his development on many of these, his help in development, testing and documentation has been invaluable.  
+                Check out his games at <a href="http://ifdb.tads.org/showuser?id=40ru852yszsizxsv">http://ifdb.tads.org/showuser?id=40ru852yszsizxsv</a></p>
+            <ul>
+                <li>COS: #112 - Disable "Rooms:Change Regions" if there are 0 regions</li>
+                <li>COS: #119 - Change language in the settings to change "lines" to "connections".</li>
+                <li>COS: #145 - There was a flicker in the 'Toggle Darkness' in the Rooms menu</li>
+                <li>ENH: #79  -  Alpha of Hugo Exporter....not yet feature complete, please send feedback.</li>
+                <li>ENH: #89  - Added octagonal room shape.  Great for Stop signs.</li>
+                <li>ENH: #97  - Added stat for rooms you can't get out of "Dead Ends".</li>
+                <li>ENH: #115 - Add graphic for straight edge room shape in room settings.</li>
+                <li>ENH: #116 - Added checkbox to link all corners together to same value for rounded corners room type.</li>
+                <li>ENH: #118 - Save the last tab on settings dialog to app settings.</li>
+                <li>ENH: #125 - Set a room as the starting room in room settings. Highlight it in a lime green. This will export to I7 and ZIL.</li>
+                <li>ENH: #131 - Added "About" to I6 exported code</li>
+                <li>ENH: #167 - Added count of dark rooms to stats.</li>
+                <li>CHG: #117 - Default name for new room should not be blank</li>
+                <li>CHG: #123 - Remove the default ("NoRegion") from the list of regions that get exported.</li>
+                <li>CHG: #126 - F1 opens up the online help.</li>
+                <li>CHG: #129 - Better message on SmartSave if it can't save the image file</li>
+                <li>FIX: #112 - Can no longer attempt to change regions if there are 0 regions.</li>
+                <li>FIX: #113 - Disable "Join rooms" in context menu/Rooms menu if rooms already joined</li>
+                <li>FIX: #120 - hand-drawn does not persist on Ctrl-Arrow to create new room</li>
+                <li>FIX: #121 - Error checking: request for warning box on unsuccessful smartsave</li>
+                <li>FIX: #122 - Some shortcut keys for new menus introduced were triggering other actions.</li>
+                <li>FIX: #127 - Failed PNG write gives successful smart-save message.</li>
+                <li>FIX: #128 - Failed EMF export does not generate error</li>
+                <li>FIX: #130 - darkness does not persist on Ctrl-Arrow to create new room</li>
+                <li>FIX: #132 - Deleting region wasn't reverting it's "ex-rooms" to NoRegion</li>
+                <li>FIX: #137 - Changing items in the Tools:Map Settings dialog wasn't marking the project as dirty.</li>
+                <li>FIX: #141 - Line styles context menu item could erronously appear on the menu for a room.</li>
+                <li>FIX: #143 - Realphabetize region listbox in settings after renaming inline.</li>
+                <li>FIX: #144 - disallow starting spaces in regions and room as it could cause issues with exporting to code.</li>
+                <li>FIX: #153 - Arrow keys moving canvas right / left were backwards.</li>
+                <li>FIX: #156 - Issue with copy / paste and connection color.  Also issue with a colon in the name is fixed.</li>
+            </ul>
+
+
+            <h4>
+                Version 1.5.9.2 - September Release (9/5/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.2">Download</a>
+            </h4>
             <ul>
                 <li>BUG: Fix crash when adding a room when an unconnected connection is selected, now adds a connection onto the end.</li>
                 <li>BUG: Fix issue when changing default connection color and then reload map would change connections to light blue.</li>
