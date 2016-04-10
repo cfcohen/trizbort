@@ -44,9 +44,48 @@
                 Follow our blog for announcements and updates (<a target="_blank" href="https://lautzofif.wordpress.com/tag/trizbort/">https://lautzofif.wordpress.com/tag/trizbort/</a>).
             </p>
 
+
             <h2>
-                Version 1.5.9.3 - Mid September Release (9/19/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.3">Download Latest</a>
+                Version 1.5.9.4 - April 2016 Release (4/9/2016) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.4">Download Latest</a>
             </h2>
+            <p>We made a lot of improvements to exporting to your favorite IF language and cleaning up our own code. We are also trying to add features that make sense to simplify building of maps while still giving you plenty of shortcuts and power tools.
+            </p>
+            <p>
+                We are also in the process of improving the export to different languages. We've added ALAN support and improved support for I7, I6, TADS and ZIL. As always if you find ways to improve, have suggestions or find bugs, please let us know or submit an issue
+                on github. Documentation is a little outdated so apologies on that. Hopefully we'll be updating that soon.</p>
+            <ul>
+                <li>ENH: - beginning of object definition language in the objects list. Still in beta (so use at own risk as things may change, but feedback is appreciated) and really focused on I7 at the moment. We will continue to improve, fix and tweak.</li>
+                <li>ENH: #23 - Command line option to start automapping of file. -m transcriptfile [trizbort map name]</li>
+                <li>ENH: #27 - Saves app window dimensions on close.</li>
+                <li>ENH: #40 - Also #192, Now we can adjust margins on exported images. We allow for default margins that can be adjusted and document specific margins.</li>
+                <li>ENH: #81 - Annotations can be now be saved to PDFs (the annotation will be the room description)</li>
+                <li>ENH: #170 - The short cut key '0' will select the starting room.</li>
+                <li>ENH: #184 - Ctrl-B backs up your current project file.</li>
+                <li>ENH: #185 - TADS/Adv3Lite export now supports regions.</li>
+                <li>ENH: #188 - \ (backslash) on room will attempt to reorganize the connections. Be careful with this as it tries to be smart about room location in relevence to each other. It can make mistakes so we are looking at ways to improve and make trizbort a bit smarter.</li>
+                <li>ENH: #189 - '[' and ']' as well as Ctrl-[ and Ctrl-] will move the selected connector around to available ports on the connected rooms.</li>
+                <li>ENH: #197 - Automap improvements: Mark start room.</li>
+                <li>ENH: #202 - Option to auto-load the last saved map when opening trizbort.</li>
+                <li>ENH: #203 - More command line options added (just beginning this, -? for current ones)</li>
+                <li>ENH: #205 - Ctrl-D deletes all connectors from selected room.</li>
+                <li>ENH: #233 - I6 export now implements regions as classes.</li>
+                <li>ENH: #255 - ALAN Export - (Beta)</li>
+                <li>ENH: #258 - Added popup for language definition in the description area.</li>
+                <li>ENH: #264 - Hand-drawn is now a room property. Global setting for new rooms, can be changed on a room level.</li>
+                <li>COS: #182 - Wording change on the duplicate room dialog in automapper.</li>
+                <li>COS: #200 - File dialog for choosing transcript in automapper now filters by *.txt and *.log -- Any other extensions in common use for transcripts?</li>
+                <li>FIX: #172 - Disallow room names to be just numbers as it creates bad I7 code.</li>
+                <li>FIX: #173 - Like #172, Blank room names are not allowed as it will create bad exported code.</li>
+                <li>FIX: #180 - When running a test command in the I7 IDE, command numbers in brackets are created at the front of each prompt line, like '>[7] n', this confused the automapper.</li>
+                <li>FIX: #234 - Trying to improve the export to code with some special characters from non-english languages. (Further improvement suggestions welcome)</li>
+                <li>FIX: #246 - Fixed some areas that were causing Trizbort to think the map was "dirty" and needed saved when it really wasn't.</li>
+            </ul>
+
+
+
+            <h4>
+                Version 1.5.9.3 - Mid September Release (9/19/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.3">Download Latest</a>
+            </h4>
             <p>Lots of enhancements and fixes for this release.  Thanks to Andrew Schultz for his development on many of these, his help in development, testing and documentation has been invaluable.  
                 Check out his games at <a href="http://ifdb.tads.org/showuser?id=40ru852yszsizxsv">http://ifdb.tads.org/showuser?id=40ru852yszsizxsv</a></p>
             <ul>
