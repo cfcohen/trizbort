@@ -46,8 +46,36 @@
 
 
             <h2>
-                Version 1.5.9.4 - April 2016 Release (4/9/2016) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.4">Download Latest</a>
+                Version 1.5.9.5 - August 2016 Release (8/6/2016) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.4">Download Latest</a>
             </h2>
+
+            <ul>
+                <li>ENH: #196 - "tb dotted" in transcript now forces next connection to be dotted.</li>
+                <li>ENH: #11 - "tb exit [direction]" in transcript will add a connection stub in that direction and "tb noexit [direction]" will remove a connection stub.</li>
+<li>                ENH: #270 - refactored the command line handling. Commands are now:
+                -a, --loadlastproject
+                -m, --automap --> give it a text file transcript. ex) trizbort --automap zork1.txt
+                -q, --quicksave --> quicksave the file to the given filename, useful in conjunction with other commands like --automap
+                -s, --smartsave --> silently do smartsave based on current smartsave settings.
+                -x, --exit --> close trizbort, again useful in conjunction with other arguments. ex) trizbort --automap zork1.txt --quicksave zork1.trizbort --exit
+</li>
+                <li>ENH: #267 - added command line parameters for exporting maps to source files --inform7, --inform6, --alan, --hugo, --tads, --zil</li>
+                <li>ENH: #186 - Added region support to Hugo export.</li>
+                <li>ENH: #279 - Added Ctrl-K to Force Darkness on selected rooms; Added Ctrl-Shift-K to force lighted on rooms.</li>
+                <li>ENH: #56 - Added support for doors. It can be setup in the connection properties. Export to I7 only at this point.</li>
+                <li>ENH: #285 - Add descriptions to connections. Used only for doors at the moment.</li>
+                <li>ENH: #283 - Allow for fine control of object text positioning.</li>
+                <li>COS: #294 - Fix wording on context menu for hand-drawn room.</li>
+                <li>ENH: - Tooltips will now show on items with out a title. This will help with being able to put different attributes or descriptions on items (connections, rooms).</li>
+                <li>ENH: #295 - Added option to app settings to show / not-show tooltips on objects.</li>
+                <li>REF: #214 - Refactored font code name.</li>
+                <li>REF: #213 - changed labels in app settings font settings</li>
+            </ul>
+
+
+            <h4>
+                Version 1.5.9.4 - April 2016 Release (4/9/2016) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.4">Download 1.5.9.4</a>
+            </h4>
             <p>We made a lot of improvements to exporting to your favorite IF language and cleaning up our own code. We are also trying to add features that make sense to simplify building of maps while still giving you plenty of shortcuts and power tools.
             </p>
             <p>
@@ -84,7 +112,7 @@
 
 
             <h4>
-                Version 1.5.9.3 - Mid September Release (9/19/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.3">Download Latest</a>
+                Version 1.5.9.3 - Mid September Release (9/19/2015) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.3">Download 1.5.9.3</a>
             </h4>
             <p>Lots of enhancements and fixes for this release.  Thanks to Andrew Schultz for his development on many of these, his help in development, testing and documentation has been invaluable.  
                 Check out his games at <a href="http://ifdb.tads.org/showuser?id=40ru852yszsizxsv">http://ifdb.tads.org/showuser?id=40ru852yszsizxsv</a></p>
