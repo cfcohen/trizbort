@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
-
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,16 +23,48 @@
 
   <body>
     <header>
-      <div class="inner">
-        <h1>Trizbort</h1>
-        <h2>The Interactive Fiction Mapper</h2>
-        <div class="float"><a href="https://github.com/JasonLautzenheiser/trizbort" class="btn btn-info btn-lg "><small>View project on</small> GitHub</a></div>
-      </div>
+        <div class="inner">
+            <h1>Trizbort</h1>
+            <h2>The Interactive Fiction Mapper</h2>
+            <div class="row">
+                <a href="https://github.com/JasonLautzenheiser/trizbort" class="btn btn-info btn-md "><small>View project on</small> GitHub</a>
+                <div class="hidden-sm hidden-md hidden-lg pull-right">
+                    <a target="_blank" href="Docs/index.shtml" class="btn btn-info btn-md">Documentation</a>
+                    <a href="https://github.com/JasonLautzenheiser/trizbort/zipball/master" class="btn btn-info btn-md">
+                        <small>Download</small>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </header>
 
     <div id="content-wrapper">
       <div class="inner clearfix">
+          <aside id="sidebar" class="hidden-xs">
+              <p><a href='https://paypal.me/Lautzenheiser/5'>Donate</a> to the development of Trizbort - </p>
+              <p>Read the <a target="_blank" href="Docs/index.shtml">Trizbort documentation</a>.</p>
+
+              <a href="https://github.com/JasonLautzenheiser/trizbort/zipball/master" class="btn btn-info btn-lg">
+                  <small>Download</small>
+                  .zip file
+              </a>
+              <br/>
+              <br/>
+              <a href="https://github.com/JasonLautzenheiser/trizbort/tarball/master" class="btn btn-info btn-lg">
+                  <small>Download</small>
+                  .tar.gz file
+              </a>
+
+              <div class="repo-owner"><a href="https://github.com/JasonLautzenheiser/trizbort"></a> is maintained by <a href="https://github.com/JasonLautzenheiser">JasonLautzenheiser</a>.</div>
+              <div><a href="https://www.jetbrains.com/resharper/" target="_blank"><img src="img/logo_resharper.png"></a></div>
+          </aside>
         <section id="main-content">
+
+
+
+
           <h1>
             <a id="welcome-to-the-trizbort-project" class="anchor" href="#welcome-to-the-trizbort-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to the Trizbort project.
           </h1>
@@ -44,10 +74,25 @@
                 Follow our blog for announcements and updates (<a target="_blank" href="https://lautzofif.wordpress.com/tag/trizbort/">https://lautzofif.wordpress.com/tag/trizbort/</a>).
             </p>
 
-
             <h2>
-                Version 1.5.9.5 - August 2016 Release (8/6/2016) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.4">Download Latest</a>
+                Version 1.5.9.6 - January 2017 Release (1/7/2017) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.6">Download Latest</a>
             </h2>
+
+            <ul>
+                <li>Removed the "fill" color in app settings. It wasn't being used anymore (#310)</li>
+                <li>Fixed issue with room properties window opening in the upper left corner of the screen (#309)</li>
+                <li>Automap will now detect when a room is being connected in the same direction as another room. The user will be prompted to keep one or other or both. (#300)</li>
+                <li>Automap now supports the EXITS command (#297)</li>
+                <li>Can now specify an end room. (#171)</li>
+                <li>Issue in Automapper when restarting, it would sometimes get confused and not display any rooms. (#195)</li>
+                <li>Added new option in Automapper, to assume two-way directions (on by default). (#296)</li>
+                <li>Add a FIND (Ctrl-F), currently only on Rooms (name, subtitle, objects and description). Found elements are selected. (#57)</li>
+                <li>F3 / Shift-F3 will cycle through found matches</li>
+            </ul>
+
+            <h4>
+                Version 1.5.9.5 - August 2016 Release (8/6/2016) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/1.5.9.5">Download v1.5.9.5</a>
+            </h4>
 
             <ul>
                 <li>ENH: #196 - "tb dotted" in transcript now forces next connection to be dotted.</li>
@@ -306,23 +351,7 @@
 
         </section>
 
-        <aside id="sidebar">
-          <p>Read the <a target="_blank" href="Docs/index.shtml">Trizbort documentation</a>.</p>
 
-          <a href="https://github.com/JasonLautzenheiser/trizbort/zipball/master" class="btn btn-info btn-lg">
-            <small>Download</small>
-            .zip file
-          </a>
-            <br/>
-            <br/>
-          <a href="https://github.com/JasonLautzenheiser/trizbort/tarball/master" class="btn btn-info btn-lg">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <div class="repo-owner"><a href="https://github.com/JasonLautzenheiser/trizbort"></a> is maintained by <a href="https://github.com/JasonLautzenheiser">JasonLautzenheiser</a>.</div>
-          <div><a href="https://www.jetbrains.com/resharper/" target="_blank"><img src="img/logo_resharper.png"></a></div>
-        </aside>
       </div>
     </div>
 
