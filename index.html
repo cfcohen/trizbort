@@ -75,8 +75,35 @@
             </p>
 
             <h2>
-                Version 1.5.9.9 - Independence Day Release (7/2/2017) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/v1.5.9.9">Download Latest</a>
+                Version 1.6.0 (2018-03-03) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/v1.6.0">Download Latest</a>
             </h2>
+
+            <ul>
+              <li>check for new versioned files and show warning when loading map (#353)</li>
+              <li>Trizbort now will detect changes to loaded map from another application and ask to reload the map (#365)</li>
+              <li>Added export for Quest (Thanks to @ThePix for this) (#392)</li>
+              <li>Added option in AppSettings to show the full file path in the main window caption.</li>
+              <li>Can now set a default room shape for a map in Map Settings (#93)</li>
+              <li>Can add a link to reference another room from a room (done through room properties). Ctrl-Click on the room with the reference will go to the room being referenced (#370)</li>
+              <li>Color picker in map settings now allows setting multiple colors at once. Just Ctrl or Shift click on the colors to select many and all can be set to same color at once (#108)</li>
+              <li>fixed naming consistency between context menu and main menu and room shape names (#356)</li>
+              <li>opening zoom is a bit more accurate and better handles margins (#357)</li>
+              <li>Fixed issue where Trizbort wasn't saving the last loaded project if that map was loaded from most recent maps menu (#364)</li>
+              <li>Minor adjustment on alignment of in/out text on rounded and octagonal rooms. (#378)</li>
+              <li>fixed error with room property dialog and rooms shapes. (#394, #388)</li>
+              <li>copy of room now copies the subtitle.</li>
+              <li>default object text color was not respected if object text was inside room and no room specific object text color was chosen. (#402)</li>
+              <li>Refactored the copy / paste giving some code optimizations and fixing some copy bugs where some properties were not getting copied. (#379, TRIZ-145, TRIZ-152, TRIZ-47)</li>
+              <li>Application Settings has been refactored. App Settings are now stored in an appsettings.json file in the application folder. The legacy settings.xml stored in the user folder will be read in if it exists and there is no appsettings.json file. This simplified the code and allows for easier management as we add new options. Map settings still stored in the map file.</li>
+              <li>moved the revisions.txt to a more standard changelog.md file.</li>
+              <li>added scrollbars to the Map Settings -> Description and History inputs. (#390, #391)</li>
+              <li>App settings are now saved on an affirmative close of the app settings dialog.</li>
+            </ul>
+
+
+            <h4>
+                Version 1.5.9.9 - Independence Day Release (7/2/2017) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/v1.5.9.9">Download v1.5.9.9</a>
+            </h4>
 
             <ul>
                 <li>The Room properties dialog parent was not getting set properly which could cause it to get lost on alt-tab making trizbort appear to be locked up. (#332)</li>
