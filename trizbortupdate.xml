@@ -2,6 +2,6 @@
 <item>
     <version>1.6.1.0</version>
     <url>http://www.trizbort.com/Trizbort1610.zip</url>
-    <changelog>https://github.com/JasonLautzenheiser/trizbort/blob/master/changelog.md</changelog>
+    <changelog>https://raw.githubusercontent.com/JasonLautzenheiser/trizbort/master/changelog.md</changelog>
     <mandatory>false</mandatory>
 </item>
