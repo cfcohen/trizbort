@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <version>2.0.0.0</version>
+    <version>1.6.0.0</version>
     <url>https://github.com/JasonLautzenheiser/trizbort/releases/download/v1.6.0/Trizbort1600.zip</url>
     <changelog>https://github.com/JasonLautzenheiser/trizbort/blob/master/changelog.md</changelog>
     <mandatory>false</mandatory>
