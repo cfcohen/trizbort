@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <version>1.7.0.0</version>
-    <url>http://www.trizbort.com/Trizbort1700.zip</url>
+    <version>1.6.1.0</version>
+    <url>http://www.trizbort.com/Trizbort1610.zip</url>
     <changelog>https://raw.githubusercontent.com/JasonLautzenheiser/trizbort/master/changelog.md</changelog>
     <mandatory>false</mandatory>
 </item>
