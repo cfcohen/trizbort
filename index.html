@@ -64,8 +64,31 @@
             </p>
 
             <h2>
-                Version 1.7.0 (2018-04-17) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/v1.7.0">Download Latest</a>
+                Version 1.7.2 (2019-03-23) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/v1.7.2">Download Latest</a>
             </h2>
+
+            <ul>
+              <li>Add filename to the invalid trizbort file on open of file. There is a bug coming where this message is showing after restart on update of Trizbort and this will help debug this.</li>
+              <li>Improved the statusbar to make it more extensible in the future.</li>
+              <li>Simplified how the zoom widget in the statusbar functions.</li>
+              <li>Added caps and num lock indicators to statusbar.</li>
+              <li>Added the option to have text break or not break on dashes. (#456)</li>
+              <li>added menu item in the View menu to toggle the background map grid (#452)</li>
+              <li>Added app settings to control what displays in the tooltip. Can show/hide descriptions and objects. Also can limit how many characters to display in the descriptions (#467)</li>
+              <li>Attempting to open an invalid trizbort file was still marking it as the last loaded project, which could cause it to try and load it again when trizbort reopened. (#442)</li>
+              <li>If the last loaded project was from the web, doing a file open (Ctrl-O) would throw up an invalid path error when opening the file open dialog. (#443)</li>
+              <li>Fix error when zooming in or out too far. (#447)</li>
+              <li>Start/end room properties will not be copied when copying a room, this fixes the issue where we could have more than one start room. (#460)</li>
+              <li>shift - right-clck allows panning of the map. The context menu no longer shows when releasing the mouse (#455)</li>
+              <li>fixed issue when saving a file many times in succession can temporarily corrupt the recent map menu list. (#454)</li>
+              <li>fixed issues with the handling of "Hand Drawn Edges" and improved the handling of the UI in regards to this setting.</li>
+              <li>middle text alignment should now be handled more consistantly. (#473)</li>
+              <li>Handle tooltips better when they are displayed and panning the page or moving the room. (#459)</li>
+          </ul>
+          
+            <h4>
+                Version 1.7.0 (2018-04-17) - <a target="_blank" class="btn" href="https://github.com/JasonLautzenheiser/trizbort/releases/tag/v1.7.0">Download v1.7.0</a>
+            </h4>
 
             <ul>
               <li>User can now load trizbort maps from the web. File-->Open Map from Url... (Ctrl-Shift-O) brings up dialog to enter url to trizbort file to load.</li>
