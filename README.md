@@ -1,39 +1,98 @@
 # Trizbort 
 
-Trizbort is a simple tool used to create maps for interactive fiction. First developed by genstein back in 2010, he continued to update until March, 2013 when he open-sourced the code and uploaded it here to Github. Fast forward to 2015 when I picked up the development and along with Andrew Schultz (focused on documentation and testing) we continue to improve this great software. Follow our blog for announcements and updates (https://lautzofif.wordpress.com/tag/trizbort/)
+Trizbort is a simple tool used to create maps for interactive fiction.
 
-![Mark stale issues and pull requests](https://github.com/JasonLautzenheiser/trizbort/workflows/Mark%20stale%20issues%20and%20pull%20requests/badge.svg)
+Please use the [primary repo](https://github.com/JasonLautzenheiser/trizbort)
+instead of this one if you're looking for the current version of Trizbort.
 
-## Links
-- [Documentation](http://www.trizbort.com/Docs/index.shtml)
-- [Release Notes](https://github.com/JasonLautzenheiser/trizbort/blob/master/changelog.md)
+# Linux Mono
 
-## Maintainers
-We thank all our contributors for all the hard work whether pull requests or simply bug reports.  Special thanks to the following for taking the time to contribute features and bug fixes.
+This fork is my attempt to make Trizbort compile and run more reliably
+on Linux.  I'm new to C# & Mono, but I'm hoping to muddle through
+sufficiently to get it working, which mostly seems to be figuring out
+why the text isn't displaying in the main window and removing some
+Windows specific features that throw exceptions or otherwise behave
+poorly.
 
-- [andrewshcultz](https://github.com/andrewschultz) - much testing, features and bug fixes. Also updating the documentation.
-- [Tymian](https://github.com/Tymian) - Bug fixes and work on copy/paste functionality
-- [ThePix](https://github.com/ThePix) - work on the export to Quest
-- [matthiaswatkins](https://github.com/matthiaswatkins) - for much work making the automapper faster and more reliable
-- [genstein](https://github.com/genstein) - obviously thanks for the intial development and all the hard work that went into Trizbort up to the point I took it over.
-- [dfabulich](https://github.com/dfabulich) - fixed some issues in documentation
-- [taradinoc](https://github.com/taradinoc) - tweaks to the ZIL exporter
+I've enabled issues on this repo to give us a place where we can
+discuss any outstanding bugs specifically related to the initial port
+and testing of the Linux (and MacOS?) version.  I'll probably use it
+to track defects that I haven't been able to fix yet there as well.  I
+encourage anyone who tests this build to report any problems that are
+present on Linux that are NOT present in Windows here as well.
+Problems present in Windows that are not related to Mono/Linux/MacOS
+should be reported in the primary repo.  I'll disable the issues again
+once we've resolved all of the known issues.
 
-The primary developer on this is [Jason Lautzenheiser](https://github.com/JasonLautzenheiser)
+# My build procedure
 
-## Contribute
-Feel free to dive in!  [Open an issue](https://github.com/JasonLautzenheiser/trizbort/issues/new) or submit PRs.
+Not being familar with Mono builds, and seeing a lot of conflicting
+information on the Internet, I lacked clear guidance on how to build
+Trizbort.  This is what I eventually figured out and it completes with
+a "successful" build, although I've hack
 
-Trizbort follows the [Contributor Covenant Code of Conduct](https://github.com/JasonLautzenheiser/trizbort/blob/master/CODE_OF_CONDUCT.md)
+First get a sufficiently up-to-date version of Mono.  I'm running
+Ubunutu 20.10, and the default version seemed to be too old to work,
+because nuget complained that it needed version 2.12.  The xbuild
+command also said to run msbuild instead, but there was no msbuild
+command.  These commands resulted in bunch of new mono packages for
+me:
 
-## License
-[MIT](https://github.com/JasonLautzenheiser/trizbort/blob/master/LICENSE.txt)
+<code>
+$ sudo apt install gnupg ca-certificates
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
+  --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+$ echo "deb [arch=amd64] https://download.mono-project.com/repo/ubuntu stable-focal main" \
+  | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+$ sudo apt update
+$ sudo apt upgrade
+</code>
 
-## Special notes
-This software uses PdfSharp, copyright (c) 2005-2007 empira Software GmbH, Cologne (Germany). See PdfSharp.License.txt.
+Then clone the repo:
 
-## Special Thanks
-[![Resharper](http://www.trizbort.com/img/logo_resharper.png)](https://www.jetbrains.com/resharper/)
+<code>
+$ git clone https://github.com/cfcohen/trizbort Trizbort
+$ cd Trizbort
+$ git checkout linux
+</code>
 
-[<img src="https://oz-code.com/wp-content/uploads/2020/01/oz-code-logo.svg" width="100">](https://www.oz-code.com/)
+Install the required packages using the new version of nuget:
 
+<code>
+$ mkdir packages
+$ cd packages
+$ nuget install CommandLineParser -Version 2.6.0
+$ nuget install Newtonsoft.Json -Version 12.0.2
+$ nuget install PDFsharp-gdi -Version 1.50.5147
+$ nuget install NUnit -Version 3.12
+$ nuget install NUnit3TestAdapter -Version 3.17.0
+$ nuget install Shouldly -Version 3.0.2.0
+</code>
+
+Build once to create the obj/x86/Debug directory:
+
+<code>
+$ cd ..
+$ msbuild
+</code>
+
+This is the best hack I've found so far to cause the buld to run
+to completion.
+
+<code>
+$ touch obj/x86/Debug/Trizbort.exe.manifest
+$ touch obj/x86/Debug/Trizbort.application
+$ msbuild
+</code>
+
+I'm not sure why there's not a Trizbort.exe.manifest or
+Trizbort.application in the upstream repo.  The msbuild command seems
+to require them, but obviously Jason seems to be building fine without
+them in Windows.  If anyone knows why these are required under Linux
+and what to do about them, please let me know.
+
+Finally, you should be able to run Trizbort with:
+
+<code>
+$ mono ./bin/Debug/Trizbort.exe
+</code>
