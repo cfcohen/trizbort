@@ -38,52 +38,42 @@ command also said to run msbuild instead, but there was no msbuild
 command.  These commands resulted in bunch of new mono packages for
 me:
 
-<code>
-$ sudo apt install gnupg ca-certificates
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
-  --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-$ echo "deb [arch=amd64] https://download.mono-project.com/repo/ubuntu stable-focal main" \
-  | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
-$ sudo apt update
-$ sudo apt upgrade
-</code>
+    $ sudo apt install gnupg ca-certificates
+    $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
+      --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+    $ echo "deb [arch=amd64] https://download.mono-project.com/repo/ubuntu stable-focal main" \
+      | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+    $ sudo apt update
+    $ sudo apt upgrade
 
 Then clone the repo:
 
-<code>
-$ git clone https://github.com/cfcohen/trizbort Trizbort
-$ cd Trizbort
-$ git checkout linux
-</code>
+    $ git clone https://github.com/cfcohen/trizbort Trizbort
+    $ cd Trizbort
+    $ git checkout linux
 
 Install the required packages using the new version of nuget:
 
-<code>
-$ mkdir packages
-$ cd packages
-$ nuget install CommandLineParser -Version 2.6.0
-$ nuget install Newtonsoft.Json -Version 12.0.2
-$ nuget install PDFsharp-gdi -Version 1.50.5147
-$ nuget install NUnit -Version 3.12
-$ nuget install NUnit3TestAdapter -Version 3.17.0
-$ nuget install Shouldly -Version 3.0.2.0
-</code>
+    $ mkdir packages
+    $ cd packages
+    $ nuget install CommandLineParser -Version 2.6.0
+    $ nuget install Newtonsoft.Json -Version 12.0.2
+    $ nuget install PDFsharp-gdi -Version 1.50.5147
+    $ nuget install NUnit -Version 3.12
+    $ nuget install NUnit3TestAdapter -Version 3.17.0
+    $ nuget install Shouldly -Version 3.0.2.0
 
 Build once to create the obj/x86/Debug directory:
 
-<code>
-$ cd ..
-$ msbuild
-</code>
+    $ cd ..
+    $ msbuild
 
 This is the best hack I've found so far to cause the buld to run
 to completion.
 
-<code>
-$ touch obj/x86/Debug/Trizbort.exe.manifest
-$ touch obj/x86/Debug/Trizbort.application
-$ msbuild
-</code>
+    $ touch obj/x86/Debug/Trizbort.exe.manifest
+    $ touch obj/x86/Debug/Trizbort.application
+    $ msbuild
 
 I'm not sure why there's not a Trizbort.exe.manifest or
 Trizbort.application in the upstream repo.  The msbuild command seems
@@ -93,6 +83,4 @@ and what to do about them, please let me know.
 
 Finally, you should be able to run Trizbort with:
 
-<code>
-$ mono ./bin/Debug/Trizbort.exe
-</code>
+    $ mono ./bin/Debug/Trizbort.exe
